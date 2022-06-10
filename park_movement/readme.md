@@ -45,7 +45,7 @@ Update others park movement fields
 
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
-| `id` | `uuid4` | Id from vehicle. |
+| `id` | `uuid4` | Id from park movement. |
 | `validate_date` | `date` | Validade date. |
 | `value` | `decimal` | Pricing for the parking. |
 

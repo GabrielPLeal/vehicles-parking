@@ -42,6 +42,7 @@ Update the customer and return customer id.
 
 | Parâmetro   | Tipo       | Descrição                           |
 | :---------- | :--------- | :---------------------------------- |
+| `id` | `uuid` | Id from vehicle. |
 | `name` | `string` | Name of the customer. |
 
 ##### 2.4 - Json example:
