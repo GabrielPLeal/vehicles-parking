@@ -40,4 +40,4 @@ class ParkMovementExitAPIView(APIView):
             park_movement.exit_date = park_movement_data['exit_date']
             park_movement.save()
             serializer = ParkMovementSerializer(park_movement)
-            return Response({"id": serializer.data.get('id')})
+            return Response({"exit_date": serializer.data.get('exit_date')})

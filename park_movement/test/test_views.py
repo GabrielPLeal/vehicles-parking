@@ -129,6 +129,7 @@ class TestViews(TestCase):
         }, content_type='application/json')
 
         self.assertEquals(response.status_code, 200)
+        self.assertEquals(response.data["exit_date"], "2022-06-15")
 
     def test_movement_exit_put_if_not_data_in_json_should_return_status_code_200(self):
         response = self.client.put(self.movement_exit_url, content_type='application/json')
