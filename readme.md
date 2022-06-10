@@ -31,6 +31,6 @@ Api to handle the flow of cars and customers leaving and entering the parking lo
 
 [vehicle-api](vehicle/readme.md)
 
-[park-movement-api](park-movement/readme.md)
+[park-movement-api](park_movement/readme.md)
 
 ```
