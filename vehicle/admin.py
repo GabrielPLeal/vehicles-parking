@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Vehicle
+from vehicle.models import VehicleModel
 
 
 class AdminCustomerVehicles(admin.ModelAdmin):
@@ -8,4 +8,4 @@ class AdminCustomerVehicles(admin.ModelAdmin):
     list_display_links = ('plate',)
 
 
-admin.site.register(Vehicle, AdminCustomerVehicles)
+admin.site.register(VehicleModel, AdminCustomerVehicles)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Customer
+from customer.models import CustomerModel
 
 
 class AdminCustomer(admin.ModelAdmin):
@@ -9,4 +9,4 @@ class AdminCustomer(admin.ModelAdmin):
     search_fields = ('name', )
 
 
-admin.site.register(Customer, AdminCustomer)
+admin.site.register(CustomerModel, AdminCustomer)
