@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import ParkMovement
+from park_movement.models import ParkMovementModel
 
 
 class AdminParkMovement(admin.ModelAdmin):
@@ -15,4 +15,4 @@ class AdminParkMovement(admin.ModelAdmin):
         )
 
 
-admin.site.register(ParkMovement, AdminParkMovement)
+admin.site.register(ParkMovementModel, AdminParkMovement)

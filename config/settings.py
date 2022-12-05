@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'vehicle',
     'park_movement',
     'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

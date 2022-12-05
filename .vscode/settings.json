@@ -1,0 +1,12 @@
+{
+    "python.pythonPath": "/Users/nbonilla/.local/share/virtualenvs/koku-iTLe243o/bin/python",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./*/tests",
+        "-p",
+        "test*"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+}

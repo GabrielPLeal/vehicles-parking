@@ -1,13 +1,38 @@
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from rest_framework import permissions
+from rest_framework import routers
 
-from customer.api.views import CustomerAPIView
-from vehicle.api.views import VehicleAPIView
-from park_movement.api.views import ParkMovementAPIView, ParkMovementExitAPIView
+from customer.view import CostumerViewSet
+from park_movement.view import ParkMovementViewSet, ParkMovementExitViewSet
+from vehicle.view import VehicleViewSet
+
+# SWAGGER
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Snippets API",
+        default_version="v1",
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
+
+router = routers.SimpleRouter()
+
+router.register("customer", CostumerViewSet, basename="customer")
+router.register("vehicle", VehicleViewSet, basename="vehicle")
+router.register("movement", ParkMovementViewSet, basename="movement")
+router.register("movement-exit", ParkMovementExitViewSet, basename="movement-exit")
 
 
 urlpatterns = [
-    path('api/v1/customer/', CustomerAPIView.as_view(), name='customer'),
-    path('api/v1/vehicle/', VehicleAPIView.as_view(), name='vehicle'),
-    path('api/v1/movement/', ParkMovementAPIView.as_view(), name='movement'),
-    path('api/v1/movement_exit/', ParkMovementExitAPIView.as_view(), name='movement_exit')
+    path("admin/", admin.site.urls),
+    path("api/v1/", include(router.urls)),
+    path(
+        "api/docs/",
+        schema_view.with_ui("swagger", cache_timeout=0),
+        name="schema-swagger-ui",
+    ),
     ]
